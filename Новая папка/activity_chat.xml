@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/black">
+
+    <!-- Заголовок экрана чата с кнопкой "Назад" -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_menu_revert"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="Назад"
+        android:tint="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/chatTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="Чат"
+            android:textSize="24sp"
+            android:padding="8dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginStart="16dp"/>
+    </LinearLayout>
+
+    <!-- RecyclerView для отображения сообщений -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:background="@color/black"/>
+
+    <!-- Поле для ввода текста и кнопка отправки -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/messageInput"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:hint="Какая самая высокая гора?"
+            android:textColor="@color/white"
+            android:background="@drawable/edittext_background"
+        android:padding="8dp"
+        android:minHeight="48dp"
+        android:maxLines="1"
+        android:importantForAccessibility="yes"/>
+
+        <ImageButton
+            android:id="@+id/sendButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_send"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="Отправить"
+        android:tint="@android:color/white"
+        android:visibility="gone"
+        android:scaleType="centerInside"/>
+    </LinearLayout>
+
+</LinearLayout>
